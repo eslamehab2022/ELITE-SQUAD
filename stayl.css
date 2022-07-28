@@ -1,0 +1,626 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@500&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: sans-serif;
+  overflow: hidden;
+}
+/*-----------------------------------------------start loading screen -----------------------------------*/
+
+#loading {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgb(12, 11, 11);
+  z-index: 999999999999999;
+}
+#welcome {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+#welcome span {
+  font-size: 50px;
+  top: 50%;
+  left: 45%;
+  width: 50px;
+  height: 100px;
+  color: rgb(253, 250, 250);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 1;
+  mix-blend-mode: screen;
+  font-weight: bold;
+}
+#welcome::before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(
+    to right,
+    #3a9efd,
+    rgba(5, 194, 194, 0.895)
+  );
+  animation: move 3s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    left: 0%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: calc(100%-50px);
+  }
+}
+/*-----------------------------------------------End loading screen -----------------------------------*/
+
+/*-----------------------------------------------start section navbar---------------------------------*/
+
+header {
+  background-color: #fff;
+}
+.navbar {
+  transition: 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item {
+  padding: 0px 22px;
+}
+.navbar-nav .nav-item .nav-link {
+  padding: 5px 2px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+}
+
+.nav-item .nav-link::before {
+  content: "";
+  bottom: -8px;
+  left: 0;
+  position: absolute;
+  background-color: #3a9efd;
+  width: 0%;
+  height: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-item .nav-link:hover::before {
+  width: 100%;
+}
+.talk {
+  border: 2px solid #1083ee;
+  margin-left: 10px;
+  position: relative;
+}
+.talk a {
+  font-weight: 700;
+}
+.talk:hover {
+  border: none;
+}
+
+.talk::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1083ee;
+  position: absolute;
+  transition: all 0.3s ease-in;
+  z-index: -1;
+}
+
+.talk:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.talk:hover a {
+  color: #fff;
+}
+.navbar-toggler i {
+  color: #3a9efd;
+  box-shadow: none;
+}
+
+.talk a {
+  text-decoration: none;
+  padding: 15px 20px;
+  z-index: 99999;
+}
+
+.talk a:hover {
+  color: #fff;
+}
+@media screen and (max-width: 992px) {
+  .navbar {
+    background-color: #fff !important;
+  }
+  .nav-item .nav-link{
+    color: #1083ee !important;
+  }
+  .talk {
+    margin-top: 20px;
+  }
+  .nav-item .nav-link:hover::before {
+    width: 0%;
+  }
+  .nav-item .nav-link::before {
+    bottom: -5px;
+  }
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #04fdf5bc;
+  }
+
+  .navbar-nav .nav-item {
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 280px) {
+  .navbar-toggler i {
+    font-size: 11px;
+  }
+}
+
+/*-----------------------------------------------end section navbar---------------------------------*/
+
+/*-----------------------------------------------start section Home---------------------------------*/
+#Home {
+  background-image: url(img/landing_image.png);
+  max-width: 100%;
+  min-height: 1000px;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 767px) {
+  #Home {
+    background-image: url(img/Image_responsive.png);
+    width: 100%;
+    max-height: auto;
+  }
+}
+
+#Home.description {
+  position: relative;
+}
+
+.info {
+  position: absolute;
+  top: 30%;
+}
+
+.info h4 {
+  color: white;
+  padding: 15px 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 45px;
+  color: #f0eff0;
+  letter-spacing: 1px;
+  width: 70%;
+}
+
+.explore {
+  padding-top: 20%;
+  transition: 0.4 ease-in-out;
+}
+
+.explore a {
+  text-decoration: none;
+  color: #3a9efd;
+  margin-left: 10px;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-family: "Montserrat Subrayada", sans-serif;
+  font-weight: 600;
+  transition: 0.3s ease-in;
+}
+.explore a:hover {
+  color: #fff;
+}
+
+.explore i {
+  text-decoration: none;
+  color: white;
+  margin: 0px 10px;
+  font-size: 20px;
+  transition: 0.3 ease;
+  animation: bouncing 1.5s infinite;
+}
+@keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .info h4 {
+    font-size: 25px;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 767px) {
+  .info h4 {
+    font-size: 37px;
+    width: 90%;
+  }
+  #Home {
+    background-image: url(img/Image_responsive.png);
+    width: 100%;
+    max-height: auto;
+    background-size: cover;
+  }
+
+  .explore {
+    padding-top: 10%;
+  }
+}
+
+/*-----------------------------------------------end section Home-----------------------------------*/
+/*-----------------------------------------------start section solutions-----------------------------------*/
+#solutions {
+  margin-top: 30px;
+}
+#solutions h2 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  color: #000;
+  padding-top: 15px;
+  font-size: 48px;
+  text-transform: capitalize;
+}
+.packeg {
+  height: 280px;
+  position: relative;
+  margin-top: 20px;
+  box-shadow: 0 4px 20px 0 rgba(3, 3, 3, 0.4);
+  transition: 0.3s ease all;
+}
+.packeg a {
+  color: #000;
+}
+.packeg i {
+  transition: 0.4s ease;
+}
+.packeg:hover i {
+  transform: translatex(10px);
+  color: #fff;
+}
+
+.packeg:hover {
+  color: #fff;
+  background-image: linear-gradient(
+    to right,
+    #3a9efd,
+    rgba(5, 194, 194, 0.895)
+  );
+  transform: translateY(-10px);
+}
+.titel {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px 0px;
+}
+.Br {
+  font-weight: bold;
+  padding: 7px 0px;
+  font-size: 16px;
+}
+.packeg h6 {
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 600;
+  bottom: 5%;
+  position: absolute;
+}
+@media screen and (max-width: 992px) and (min-width: 767px) {
+  .packeg {
+    height: 300px;
+  }
+
+  .packeg h6 {
+    bottom: 3%;
+  }
+  .titel {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .packeg {
+    height: 320px;
+  }
+
+  .titel {
+    font-size: 12px;
+  }
+  .packeg h6 {
+    bottom: 10px;
+  }
+}
+
+/*-----------------------------------------------end section solutions-----------------------------------*/
+/*-----------------------------------------------start section why us-----------------------------------*/
+.why {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  color: rgb(7, 7, 7);
+  padding-top: 15px;
+  font-size: 48px;
+  text-transform: capitalize;
+}
+.us h5 {
+  font-family: "Montserrat Subrayada", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.our h5 {
+  color: #3a9efd;
+  font-family: "IBM Plex Serif", serif;
+  font-size: 32px;
+  padding-bottom: 10px;
+}
+
+.our p {
+  font-family: "Montserrat Subrayada", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/*-----------------------------------------------end section why us-----------------------------------*/
+/*-----------------------------------------------start section our -----------------------------------*/
+.Partener h2 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  color: rgb(7, 7, 7);
+  padding-top: 15px;
+  font-size: 48px;
+  text-transform: capitalize;
+}
+.Partener h6 {
+  font-family: "Montserrat Subrayada", sans-serif;
+  font-size: 24px;
+  width: 60%;
+  padding-top: 10px;
+}
+@media screen and (max-width: 767px) {
+  .Partener h2 {
+    font-size: 35px;
+  }
+  .Partener h6 {
+    width: 90%;
+    font-size: 20px;
+  }
+}
+.splide__pagination {
+  bottom: -0.5rem;
+}
+/*-----------------------------------------------end section our -----------------------------------*/
+/*-----------------------------------------------start section contact us -----------------------------------*/
+.contact {
+  height: auto;
+  overflow: hidden;
+}
+.blue {
+  background-color: #3a9efd;
+  height: auto;
+  position: relative;
+}
+.img_contact {
+  padding-top: 30px;
+  position: absolute;
+  bottom: 0px;
+}
+.blue h2 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  color: #fff;
+  font-size: 48px;
+  text-transform: capitalize;
+  padding-left: 20%;
+  padding-top: 40px;
+}
+
+.blue p {
+  width: 60%;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #fff;
+  padding-top: 20px;
+  font-size: 25px;
+  margin: auto;
+}
+@media screen and (max-width: 767px) {
+  .blue {
+    height: 550px;
+  }
+  .blue h2 {
+    padding-left: 15%;
+  }
+
+  .blue p {
+    width: 80%;
+    font-size: 18px !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .blue {
+    height: 630px;
+  }
+  .blue p {
+    width: 72%;
+    font-size: 18px;
+  }
+}
+
+.name {
+  width: 300px;
+  display: inline-block;
+  margin: 5px;
+}
+label {
+  display: block;
+  font-size: 16px;
+}
+.area {
+  min-height: 170px;
+  height: 170px;
+  width: 80%;
+}
+.forms {
+  background-color: #f4f4f4;
+}
+.form-row {
+  margin-right: -5px;
+  margin-left: -11px;
+}
+
+/*-----------------------------------------------end section contact us -----------------------------------*/
+/*-----------------------------------------------start footer -----------------------------------*/
+
+footer {
+  width: 100%;
+  height: auto;
+  background-color: #000;
+}
+.side_1 {
+  margin-top: 40px;
+  padding-left: 20px;
+}
+.cont_footer p {
+  color: #fff;
+  font-family: "Montserrat Subrayada", sans-serif;
+  font-size: 20px;
+  padding-top: 30px;
+}
+.side_2 {
+  margin-top: 25px;
+  padding-left: 100px;
+}
+.side_2 a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Montserrat Subrayada", sans-serif;
+  padding-top: 30px;
+}
+.side_2 h6 {
+  margin-top: 30px;
+  font-size: 25px;
+}
+.side_3 {
+  margin: 25px;
+}
+@media screen and (max-width: 767px) {
+  .side_2 {
+    padding-left: 30px;
+  }
+  .action {
+    margin-left: 20px;
+    margin-bottom: 30px;
+  }
+
+  .side_1 {
+    padding-left: 30px;
+  }
+}
+@media screen and (max-width: 992px) and (min-width: 767px) {
+  .side_2 {
+    padding-left: 20px;
+  }
+}
+.side_3 h5 {
+  padding-top: 25px;
+  color: #fff;
+  font-family: "Montserrat Subrayada", sans-serif;
+  font-size: 25px;
+}
+.footer_contact {
+  color: #fff;
+  margin-top: 20px;
+  padding: 10px 0px;
+}
+.action {
+  margin-top: 25px;
+}
+.side_4 {
+  margin-top: 25px;
+  color: #fff;
+  font-family: "Montserrat Subrayada", sans-serif;
+  font-size: 20px;
+}
+.tell {
+  width: 200px;
+  background-color: transparent;
+  color: #fff;
+}
+.min i {
+  color: #fff;
+}
+.min {
+  background-image: linear-gradient(
+    to right,
+    #3a9efd,
+    rgba(5, 194, 194, 0.895)
+  );
+}
+
+#togeel {
+  position: fixed;
+  top: 300px;
+  right: 0px;
+  z-index: 5555;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #000;
+}
+#togeel ul li {
+  display: block;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+}
+
+#togeel i {
+  color: #fff;
+  background-image: linear-gradient(
+    to right,
+    #3a9efd,
+    rgba(5, 194, 194, 0.895)
+  );
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.social_media_icon a {
+  text-decoration: none;
+}
+/*-----------------------------------------------end footer -----------------------------------*/
